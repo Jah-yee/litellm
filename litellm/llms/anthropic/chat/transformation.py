@@ -195,6 +195,7 @@ class AnthropicConfig(AnthropicModelInfo, BaseConfig):
             "speed",
             "context_management",
             "cache_control",
+            "service_tier",
         ]
 
         if (
@@ -1065,6 +1066,10 @@ class AnthropicConfig(AnthropicModelInfo, BaseConfig):
             elif param == "speed" and isinstance(value, str):
                 # Pass through Anthropic-specific speed parameter for fast mode
                 optional_params["speed"] = value
+            elif param == "service_tier" and isinstance(value, str):
+                # Pass through Anthropic service_tier parameter
+                # Valid values: "auto", "standard_only"
+                optional_params["service_tier"] = value
             elif param == "cache_control" and isinstance(value, dict):
                 # Pass through top-level cache_control for automatic prompt caching
                 optional_params["cache_control"] = value
