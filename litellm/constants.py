@@ -382,7 +382,6 @@ CACHED_STREAMING_CHUNK_DELAY = float(os.getenv("CACHED_STREAMING_CHUNK_DELAY", 0
 AUDIO_SPEECH_CHUNK_SIZE = int(
     os.getenv("AUDIO_SPEECH_CHUNK_SIZE", 8192)
 )  # chunk_size for audio speech streaming. Balance between latency and memory usage
-)
 DEFAULT_MAX_TOKENS_FOR_TRITON = int(os.getenv("DEFAULT_MAX_TOKENS_FOR_TRITON", 2000))
 #### Networking settings ####
 request_timeout: float = float(os.getenv("REQUEST_TIMEOUT", 6000))  # time in seconds
